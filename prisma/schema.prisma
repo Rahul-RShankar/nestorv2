@@ -1,0 +1,110 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "windows"]
+  engineType    = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:postgres@localhost:5432/nestor"
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  SALES
+  CUSTOMER
+  ACCOUNTS
+  CRM
+}
+
+enum PropertyStatus {
+  AVAILABLE
+  BOOKED
+  ALLOTTED
+}
+
+enum ProjectPhase {
+  BOOKING
+  DEVELOPMENT
+  ALLOTMENT
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  phone         String?
+  passwordHash  String
+  role          Role      @default(CUSTOMER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  bookings      Booking[]
+}
+
+model Project {
+  id              String      @id @default(cuid())
+  name            String
+  city            String
+  currentPhase    ProjectPhase @default(BOOKING)
+  phase1Start     DateTime?
+  phase2Start     DateTime?
+  phase3Start     DateTime?
+  status          String      @default("Active")
+  properties      Property[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model Property {
+  id            String         @id @default(cuid())
+  projectId     String
+  project       Project        @relation(fields: [projectId], references: [id])
+  segment       String
+  slotNo        String?
+  plotNo        String?
+  floorNo       String?
+  rowNo         String?
+  status        PropertyStatus @default(AVAILABLE)
+  price         Decimal
+  area          Float
+  facing        String?
+  type          String?
+  images        String[]
+  metadata      Json?
+  bookings      Booking[]
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+}
+
+model Booking {
+  id            String        @id @default(cuid())
+  userId        String
+  user          User          @relation(fields: [userId], references: [id])
+  propertyId    String
+  property      Property      @relation(fields: [propertyId], references: [id])
+  phase         Int           @default(1)
+  status        BookingStatus @default(PENDING)
+  tokenAmount   Decimal
+  paymentRef    String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  payments      Payment[]
+}
+
+model Payment {
+  id                String   @id @default(cuid())
+  bookingId         String
+  booking           Booking  @relation(fields: [bookingId], references: [id])
+  amount            Decimal
+  provider          String?
+  providerPaymentId String?  @unique
+  status            String
+  createdAt         DateTime @default(now())
+}
