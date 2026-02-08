@@ -1,0 +1,275 @@
+.container {
+    margin-top: 80px;
+    background: var(--background);
+    min-height: calc(100vh - 80px);
+    padding: 4rem 0;
+}
+
+.wizard {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stepper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.stepper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--border);
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.stepIndicator {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--muted);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.activeStep {
+    border-color: var(--secondary);
+    color: var(--secondary);
+    background: white;
+}
+
+.completedStep {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: white;
+}
+
+.card {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+}
+
+.stepTitle {
+    font-size: 1.75rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.summaryContainer {
+    display: flex;
+    gap: 2rem;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+}
+
+.summaryImg {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: calc(var(--radius) / 2);
+}
+
+.summaryText h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+}
+
+.tokenHighlight {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.notice {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.termsBox {
+    background: #f1f5f9;
+    padding: 2rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+}
+
+.termsBox ol {
+    padding-left: 1.5rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.checkboxGroup {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.checkboxGroup input {
+    margin-top: 0.3rem;
+    accent-color: var(--secondary);
+}
+
+.paymentBox {
+    text-align: center;
+}
+
+.paymentSummary {
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+    border: 1px solid var(--border);
+}
+
+.payRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.bolder {
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+.mockPayment {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--border);
+}
+
+.payOptions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.payOption {
+    flex: 1;
+    padding: 1.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.payOption:hover {
+    border-color: var(--secondary);
+    background: rgba(197, 160, 89, 0.05);
+}
+
+.successIcon {
+    width: 80px;
+    height: 80px;
+    background: var(--success);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto 2rem;
+}
+
+.successText {
+    font-size: 1.25rem;
+    color: #475569;
+    margin-bottom: 3rem;
+}
+
+.nextStepsCard {
+    text-align: left;
+    background: #ecfdf5;
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid #d1fae5;
+    margin-bottom: 3rem;
+}
+
+.nextStepsCard h3 {
+    color: #065f46;
+    margin-bottom: 1rem;
+}
+
+.nextStepsCard ul {
+    padding-left: 1.5rem;
+    color: #065f46;
+}
+
+.nextStepsCard li {
+    margin-bottom: 0.5rem;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.loading {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}

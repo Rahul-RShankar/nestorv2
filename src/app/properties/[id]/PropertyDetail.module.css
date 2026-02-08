@@ -1,0 +1,230 @@
+.container {
+    padding-bottom: 5rem;
+    background: var(--background);
+}
+
+.hero {
+    height: 500px;
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 3rem;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(10, 25, 47, 0.9), transparent);
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 4rem;
+    color: white;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.available {
+    background: var(--success);
+}
+
+.booked {
+    background: var(--warning);
+}
+
+.allotted {
+    background: var(--info);
+}
+
+.title {
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+    color: white;
+}
+
+.location {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+}
+
+.section {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--secondary);
+    padding-left: 1rem;
+}
+
+.description {
+    line-height: 1.8;
+    color: #475569;
+    font-size: 1.1rem;
+}
+
+.specsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.specItem {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.specLabel {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.specValue {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.amenities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.amenities li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+.amenities li::before {
+    content: '✓';
+    color: var(--secondary);
+    font-weight: 800;
+}
+
+.sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.bookingCard {
+    background: white;
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem;
+}
+
+.priceSection {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.priceLabel {
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.priceValue {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-top: 0.5rem;
+}
+
+.infoRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #475569;
+}
+
+.bold {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.scarcityText {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+}
+
+.contactSupport {
+    text-align: center;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.phoneLink {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+.notFound {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+}

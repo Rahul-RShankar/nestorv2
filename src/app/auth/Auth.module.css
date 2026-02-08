@@ -1,0 +1,123 @@
+.authPage {
+    min-height: calc(100vh - 80px);
+    /* 80px navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    padding: 4rem 2rem;
+    margin-top: 80px;
+}
+
+.authCard {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid var(--border);
+}
+
+.authTitle {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.authSubtitle {
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.1);
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.submitBtn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.footerLink {
+    color: var(--secondary);
+    font-weight: 700;
+    margin-left: 0.5rem;
+}
+
+.forgotLink {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.forgotLink:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.error {
+    background: #fef2f2;
+    color: var(--danger);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #fee2e2;
+}

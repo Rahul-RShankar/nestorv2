@@ -1,0 +1,148 @@
+.container {
+    margin-top: 80px;
+    background: var(--background);
+    min-height: 100vh;
+}
+
+.header {
+    background: var(--primary);
+    color: white;
+    padding: 4rem 0;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 600px;
+}
+
+.tabBar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 80px;
+    z-index: 10;
+}
+
+.tabs {
+    display: flex;
+    gap: 2rem;
+}
+
+.tab {
+    padding: 1.5rem 0.5rem;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.tab:hover {
+    color: var(--primary);
+}
+
+.activeTab {
+    color: var(--secondary);
+}
+
+.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.main {
+    padding: 4rem 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.sidebar {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 180px;
+    /* Distance from tab bar */
+}
+
+.filterTitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.filterItem {
+    margin-bottom: 2rem;
+}
+
+.filterItem label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.filterItem input[type="range"] {
+    width: 100%;
+    accent-color: var(--secondary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.empty {
+    text-align: center;
+    padding: 5rem 0;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px dashed var(--border);
+    color: var(--muted);
+}
+
+@media (max-width: 992px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        gap: 1.5rem;
+    }
+
+    .tab {
+        white-space: nowrap;
+    }
+}

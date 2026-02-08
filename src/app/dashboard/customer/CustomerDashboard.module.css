@@ -1,0 +1,326 @@
+.container {
+    display: flex;
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    background: #f1f5f9;
+}
+
+.sidebar {
+    width: 280px;
+    background: var(--primary);
+    color: white;
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.userProfile {
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.userInfo h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.userInfo p {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.navItem {
+    padding: 1.25rem 2rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border-left: 4px solid transparent;
+}
+
+.navItem:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--secondary);
+}
+
+.main {
+    flex: 1;
+    padding: 3rem 4rem;
+    overflow-y: auto;
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: var(--muted);
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.statCard {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+
+.statCard span {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.statCard h2 {
+    font-size: 2.25rem;
+    color: var(--primary);
+    margin-top: 0.5rem;
+}
+
+.phaseTxt {
+    color: var(--secondary) !important;
+}
+
+.bookingsSection {
+    margin-bottom: 4rem;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sectionHeader h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.bookingList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.bookingCard {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1.2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.bookingInfo h3 {
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.bookingInfo p {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.phaseIndicator {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.phaseLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #cbd5e1;
+}
+
+.activePhase {
+    color: var(--secondary);
+}
+
+.progressBar {
+    height: 8px;
+    background: #f1f5f9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--secondary);
+    border-radius: 4px;
+}
+
+.bookingActions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.docsSection h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+}
+
+.docsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.docItem {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.docIcon {
+    font-size: 2rem;
+}
+
+.docContent h4 {
+    margin: 0;
+    color: var(--primary);
+}
+
+.docContent p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.downloadBtn {
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.downloadBtn:hover {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+.loader {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+    .bookingCard {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .bookingActions {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 1.5rem 0;
+    }
+
+    .nav {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .navItem {
+        padding: 1rem 1.5rem;
+        white-space: nowrap;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .active {
+        border-bottom-color: var(--secondary);
+    }
+
+    .main {
+        padding: 2rem;
+    }
+
+    .statsGrid,
+    .docsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+:global(.btn-sm) {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
